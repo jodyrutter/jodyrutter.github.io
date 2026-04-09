@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="JR monogram">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c8c80" />
+      <stop offset="100%" stop-color="#cb7a2b" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="#fffaf3" />
+  <rect x="10" y="10" width="108" height="108" rx="24" fill="url(#g)" />
+  <text
+    x="64"
+    y="75"
+    text-anchor="middle"
+    font-size="54"
+    font-family="'Space Grotesk', sans-serif"
+    font-weight="700"
+    fill="white"
+  >
+    JR
+  </text>
+</svg>
