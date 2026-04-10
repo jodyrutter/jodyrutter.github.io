@@ -145,17 +145,19 @@ if (experienceRoot) {
             <div class="timeline-date">${item.period}</div>
             <p class="timeline-highlight">${item.highlight}</p>
           </div>
-          <figure class="timeline-visual">
-            <img src="${item.image}" alt="${item.company} poster." />
-          </figure>
-          <div class="timeline-body">
-            <div>
-              <h3>${item.role}</h3>
-              <strong>${item.company}</strong>
-            </div>
-            <p>${item.summary}</p>
-            <div class="timeline-meta">
-              ${item.skills.map((skill) => `<span>${skill}</span>`).join("")}
+          <div class="timeline-main">
+            <figure class="timeline-visual">
+              <img src="${item.image}" alt="${item.company} poster." />
+            </figure>
+            <div class="timeline-body">
+              <div class="timeline-heading">
+                <h3>${item.role}</h3>
+                <strong>${item.company}</strong>
+              </div>
+              <p>${item.summary}</p>
+              <div class="timeline-meta">
+                ${item.skills.map((skill) => `<span>${skill}</span>`).join("")}
+              </div>
             </div>
           </div>
         </article>
