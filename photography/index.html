@@ -6,7 +6,7 @@
     <title>Jody Rutter | Drone Photography</title>
     <meta
       name="description"
-      content="Aerial photography gallery by Jody Rutter, featuring drone images organized into browsable albums."
+      content="Aerial photography gallery by Jody Rutter, featuring drone images organized by location and month."
     />
     <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,7 +29,7 @@
 
       <nav class="site-nav" aria-label="Primary">
         <a href="../index.html">Main Site</a>
-        <a href="#albums">Albums</a>
+        <a href="#albums">Locations</a>
         <a href="#gallery">Gallery</a>
       </nav>
     </header>
@@ -41,8 +41,9 @@
           <h1>An aerial archive, organized for the web.</h1>
           <p class="lede">
             This gallery is a dedicated second page within the portfolio, built from resized web
-            copies of the drone library so the originals stay untouched. Browse by album, then
-            open any shot in a larger view.
+            copies of the drone library so the originals stay untouched. Photos are grouped by
+            shooting location when GPS data is available, with month-based organization inside
+            each location.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#gallery">Open Gallery</a>
@@ -62,15 +63,16 @@
 
       <section class="section album-section" id="albums">
         <div class="section-heading reveal">
-          <p class="eyebrow">Albums</p>
-          <h2>Browse by folder</h2>
+          <p class="eyebrow">Locations</p>
+          <h2>Browse by location</h2>
           <p>
-            The gallery uses album filters so the photography section stays usable even with a
-            large library behind it.
+            Filters are generated from photo metadata so the library stays usable at scale. Each
+            card also shows its location and year-month grouping.
           </p>
         </div>
 
         <div id="album-stats" class="album-stats panel reveal"></div>
+        <p id="album-helper" class="album-helper reveal"></p>
         <div id="album-filters" class="album-filters reveal"></div>
       </section>
 

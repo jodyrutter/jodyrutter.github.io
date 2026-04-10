@@ -2,6 +2,7 @@ const manifestUrl = "../assets/photography/data/manifest.json";
 const initialBatch = 60;
 
 const albumStats = document.querySelector("#album-stats");
+const albumHelper = document.querySelector("#album-helper");
 const albumFilters = document.querySelector("#album-filters");
 const galleryTitle = document.querySelector("#gallery-title");
 const gallerySummary = document.querySelector("#gallery-summary");
@@ -88,6 +89,8 @@ const renderStats = () => {
       <span>Location groups available to browse</span>
     </article>
   `;
+
+  albumHelper.textContent = `The live gallery is organized into ${manifest.albums.length.toLocaleString()} location filters. Inside each location, photos are labeled by year and month, with exact dates shown in the larger view when available.`;
 };
 
 const renderAlbumFilters = () => {
@@ -97,7 +100,7 @@ const renderAlbumFilters = () => {
 
   const buttons = [{ name: "all", count: manifest.total }, ...manifest.albums]
     .map((album) => {
-      const label = album.name === "all" ? "All Photos" : formatAlbumName(album.name);
+      const label = album.name === "all" ? "All Locations" : formatAlbumName(album.name);
       const active = album.name === selectedAlbum ? "is-active" : "";
 
       return `
@@ -201,10 +204,13 @@ const openLightbox = (photo) => {
 const renderGallery = () => {
   const filtered = getFilteredPhotos();
   const visible = filtered.slice(0, visibleCount);
-  const activeLabel = selectedAlbum === "all" ? "All Photos" : formatAlbumName(selectedAlbum);
+  const activeLabel = selectedAlbum === "all" ? "All Locations" : formatAlbumName(selectedAlbum);
 
   galleryTitle.textContent = panoramaOnly ? `${activeLabel} - Panoramas` : activeLabel;
-  gallerySummary.textContent = `${filtered.length.toLocaleString()} photos available. Showing ${visible.length.toLocaleString()} right now.`;
+  gallerySummary.textContent =
+    selectedAlbum === "all"
+      ? `${filtered.length.toLocaleString()} photos available across all location groups. Showing ${visible.length.toLocaleString()} right now, sorted by location and then newest date first.`
+      : `${filtered.length.toLocaleString()} photos available in ${activeLabel}. Showing ${visible.length.toLocaleString()} right now, newest date first.`;
 
   photoGrid.innerHTML = visible
     .map(

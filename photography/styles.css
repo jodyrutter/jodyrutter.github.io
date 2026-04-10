@@ -45,6 +45,12 @@
   padding: 22px;
 }
 
+.album-helper {
+  margin: 0 0 18px;
+  color: var(--muted);
+  max-width: 74ch;
+}
+
 .album-stat {
   padding: 16px;
   border: 1px solid rgba(24, 36, 47, 0.08);
