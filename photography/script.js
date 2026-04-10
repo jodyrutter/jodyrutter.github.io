@@ -19,6 +19,7 @@ let manifest;
 let selectedAlbum = "all";
 let visibleCount = initialBatch;
 let panoramaState = null;
+let panoramaOnly = false;
 
 const formatAlbumName = (name) => {
   if (name === "root") {
@@ -36,10 +37,10 @@ const getFilteredPhotos = () => {
   }
 
   if (selectedAlbum === "all") {
-    return manifest.photos;
+    return panoramaOnly ? manifest.photos.filter((photo) => isPanorama(photo)) : manifest.photos;
   }
 
-  return manifest.photos.filter((photo) => photo.album === selectedAlbum);
+  return manifest.photos.filter((photo) => photo.album === selectedAlbum && (!panoramaOnly || isPanorama(photo)));
 };
 
 const renderStats = () => {
@@ -99,6 +100,18 @@ const renderAlbumFilters = () => {
       renderGallery();
     });
   });
+
+  const panoramaButton = document.createElement("button");
+  panoramaButton.type = "button";
+  panoramaButton.className = `album-filter ${panoramaOnly ? "is-active" : ""}`;
+  panoramaButton.textContent = `Panoramas Only - ${manifest.photos.filter((photo) => isPanorama(photo)).length.toLocaleString()}`;
+  panoramaButton.addEventListener("click", () => {
+    panoramaOnly = !panoramaOnly;
+    visibleCount = initialBatch;
+    renderAlbumFilters();
+    renderGallery();
+  });
+  albumFilters.appendChild(panoramaButton);
 };
 
 const updatePanoramaTransform = () => {
@@ -172,13 +185,14 @@ const renderGallery = () => {
   const visible = filtered.slice(0, visibleCount);
   const activeLabel = selectedAlbum === "all" ? "All Photos" : formatAlbumName(selectedAlbum);
 
-  galleryTitle.textContent = activeLabel;
+  galleryTitle.textContent = panoramaOnly ? `${activeLabel} - Panoramas` : activeLabel;
   gallerySummary.textContent = `${filtered.length.toLocaleString()} photos available. Showing ${visible.length.toLocaleString()} right now.`;
 
   photoGrid.innerHTML = visible
     .map(
       (photo, index) => `
         <article class="photo-card reveal is-visible ${isPanorama(photo) ? "is-panorama" : ""}">
+          ${isPanorama(photo) ? '<div class="photo-badge">Panorama</div>' : ""}
           <button type="button" data-photo-index="${index}">
             <img loading="lazy" src="${photo.thumb}" alt="${photo.name}" />
           </button>
