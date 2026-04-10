@@ -39,7 +39,7 @@
 
 .album-stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   margin-bottom: 18px;
   padding: 22px;
@@ -134,6 +134,10 @@
   border-radius: 14px;
 }
 
+.photo-card.is-panorama img {
+  aspect-ratio: 1.75;
+}
+
 .photo-card-meta {
   display: grid;
   gap: 6px;
@@ -198,6 +202,47 @@
   background: #081017;
 }
 
+.panorama-stage {
+  position: relative;
+  height: min(76vh, 720px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(27, 46, 58, 0.35), transparent 60%),
+    linear-gradient(180deg, #071019 0%, #0e1a24 100%);
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.panorama-stage.is-dragging {
+  cursor: grabbing;
+}
+
+.panorama-stage img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  max-width: none;
+  max-height: none;
+  transform-origin: center center;
+  will-change: transform;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+}
+
+.panorama-hint {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(6, 13, 18, 0.58);
+  color: rgba(243, 247, 249, 0.86);
+  font-size: 0.88rem;
+  backdrop-filter: blur(10px);
+}
+
 .lightbox-meta {
   padding: 18px 22px 22px;
   color: white;
@@ -232,5 +277,15 @@
 
   .photo-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .panorama-stage {
+    height: min(62vh, 520px);
+  }
+
+  .panorama-hint {
+    right: 12px;
+    bottom: 12px;
+    font-size: 0.8rem;
   }
 }

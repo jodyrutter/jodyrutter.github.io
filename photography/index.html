@@ -93,8 +93,12 @@
     <dialog id="lightbox" class="lightbox">
       <div class="lightbox-shell">
         <button id="close-lightbox" class="lightbox-close" type="button" aria-label="Close gallery view">
-          ×
+          &times;
         </button>
+        <div id="panorama-stage" class="panorama-stage" hidden>
+          <img id="panorama-image" alt="" />
+          <div class="panorama-hint">Drag to pan. Use the mouse wheel to zoom.</div>
+        </div>
         <img id="lightbox-image" alt="" />
         <div class="lightbox-meta">
           <h3 id="lightbox-title"></h3>
