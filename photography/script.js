@@ -3,6 +3,8 @@ const initialBatch = 60;
 
 const albumStats = document.querySelector("#album-stats");
 const albumHelper = document.querySelector("#album-helper");
+const qualityToggle = document.querySelector("#quality-toggle");
+const qualityNote = document.querySelector("#quality-note");
 const albumFilters = document.querySelector("#album-filters");
 const galleryTitle = document.querySelector("#gallery-title");
 const gallerySummary = document.querySelector("#gallery-summary");
@@ -21,6 +23,7 @@ let selectedAlbum = "all";
 let visibleCount = initialBatch;
 let panoramaState = null;
 let panoramaOnly = false;
+let highQualityOnly = true;
 
 const formatAlbumName = (name) => {
   if (name === "root") {
@@ -31,6 +34,15 @@ const formatAlbumName = (name) => {
 };
 
 const isPanorama = (photo) => photo.width / Math.max(photo.height, 1) >= 2.2;
+const passesQuality = (photo) => !highQualityOnly || photo.isHighQuality;
+
+const getVisiblePool = () => {
+  if (!manifest) {
+    return [];
+  }
+
+  return manifest.photos.filter((photo) => passesQuality(photo) && (!panoramaOnly || isPanorama(photo)));
+};
 
 const comparePhotos = (left, right) => {
   const leftLocation = left.locationLabel || left.album;
@@ -55,13 +67,13 @@ const getFilteredPhotos = () => {
     return [];
   }
 
+  const visiblePool = getVisiblePool();
+
   if (selectedAlbum === "all") {
-    return (panoramaOnly ? manifest.photos.filter((photo) => isPanorama(photo)) : manifest.photos).sort(comparePhotos);
+    return visiblePool.sort(comparePhotos);
   }
 
-  return manifest.photos
-    .filter((photo) => photo.album === selectedAlbum && (!panoramaOnly || isPanorama(photo)))
-    .sort(comparePhotos);
+  return visiblePool.filter((photo) => photo.album === selectedAlbum).sort(comparePhotos);
 };
 
 const renderStats = () => {
@@ -70,6 +82,8 @@ const renderStats = () => {
   }
 
   const panoramaCount = manifest.photos.filter((photo) => isPanorama(photo)).length;
+  const highQualityCount = manifest.photos.filter((photo) => photo.isHighQuality).length;
+  const archivedCount = manifest.total - highQualityCount;
 
   albumStats.innerHTML = `
     <article class="album-stat">
@@ -79,6 +93,14 @@ const renderStats = () => {
     <article class="album-stat">
       <strong>${manifest.duplicatesRemoved.toLocaleString()}</strong>
       <span>Exact duplicates removed from the web gallery build</span>
+    </article>
+    <article class="album-stat">
+      <strong>${highQualityCount.toLocaleString()}</strong>
+      <span>Photos currently considered high quality</span>
+    </article>
+    <article class="album-stat">
+      <strong>${archivedCount.toLocaleString()}</strong>
+      <span>Archive shots hidden when high quality mode is on</span>
     </article>
     <article class="album-stat">
       <strong>${panoramaCount.toLocaleString()}</strong>
@@ -91,6 +113,9 @@ const renderStats = () => {
   `;
 
   albumHelper.textContent = `The live gallery is organized into ${manifest.albums.length.toLocaleString()} location filters. Inside each location, photos are labeled by year and month, with exact dates shown in the larger view when available.`;
+  qualityNote.textContent = highQualityOnly
+    ? `${archivedCount.toLocaleString()} softer, flatter, or weaker archive shots are currently hidden. Turn the switch off to browse the full library.`
+    : `High quality mode is off, so you are seeing the full archive, including shots that were kept for completeness but are less polished.`;
 };
 
 const renderAlbumFilters = () => {
@@ -98,14 +123,21 @@ const renderAlbumFilters = () => {
     return;
   }
 
-  const buttons = [{ name: "all", count: manifest.total }, ...manifest.albums]
+  const visiblePool = getVisiblePool();
+  const albumCounts = visiblePool.reduce((counts, photo) => {
+    counts.set(photo.album, (counts.get(photo.album) || 0) + 1);
+    return counts;
+  }, new Map());
+
+  const buttons = [{ name: "all", count: visiblePool.length }, ...manifest.albums]
     .map((album) => {
       const label = album.name === "all" ? "All Locations" : formatAlbumName(album.name);
+      const count = album.name === "all" ? visiblePool.length : albumCounts.get(album.name) || 0;
       const active = album.name === selectedAlbum ? "is-active" : "";
 
       return `
-        <button class="album-filter ${active}" type="button" data-album="${album.name}">
-          ${label} - ${album.count.toLocaleString()}
+        <button class="album-filter ${active}" type="button" data-album="${album.name}" ${count === 0 ? "disabled" : ""}>
+          ${label} - ${count.toLocaleString()}
         </button>
       `;
     })
@@ -125,7 +157,7 @@ const renderAlbumFilters = () => {
   const panoramaButton = document.createElement("button");
   panoramaButton.type = "button";
   panoramaButton.className = `album-filter ${panoramaOnly ? "is-active" : ""}`;
-  panoramaButton.textContent = `Panoramas Only - ${manifest.photos.filter((photo) => isPanorama(photo)).length.toLocaleString()}`;
+  panoramaButton.textContent = `Panoramas Only - ${visiblePool.filter((photo) => isPanorama(photo)).length.toLocaleString()}`;
   panoramaButton.addEventListener("click", () => {
     panoramaOnly = !panoramaOnly;
     visibleCount = initialBatch;
@@ -205,12 +237,24 @@ const renderGallery = () => {
   const filtered = getFilteredPhotos();
   const visible = filtered.slice(0, visibleCount);
   const activeLabel = selectedAlbum === "all" ? "All Locations" : formatAlbumName(selectedAlbum);
+  const hiddenByQuality = manifest.photos.length - manifest.photos.filter((photo) => photo.isHighQuality).length;
 
   galleryTitle.textContent = panoramaOnly ? `${activeLabel} - Panoramas` : activeLabel;
   gallerySummary.textContent =
     selectedAlbum === "all"
-      ? `${filtered.length.toLocaleString()} photos available across all location groups. Showing ${visible.length.toLocaleString()} right now, sorted by location and then newest date first.`
-      : `${filtered.length.toLocaleString()} photos available in ${activeLabel}. Showing ${visible.length.toLocaleString()} right now, newest date first.`;
+      ? `${filtered.length.toLocaleString()} photos available across all location groups. Showing ${visible.length.toLocaleString()} right now, sorted by location and then newest date first.${highQualityOnly ? ` ${hiddenByQuality.toLocaleString()} archive shots are hidden by the quality switch.` : ""}`
+      : `${filtered.length.toLocaleString()} photos available in ${activeLabel}. Showing ${visible.length.toLocaleString()} right now, newest date first.${highQualityOnly ? " High quality mode is on." : ""}`;
+
+  if (!visible.length) {
+    photoGrid.innerHTML = `
+      <article class="empty-state panel reveal is-visible">
+        <h3>No photos match this filter yet</h3>
+        <p>Try another location, turn off panoramas only, or disable the high quality switch to browse the full archive.</p>
+      </article>
+    `;
+    loadMoreButton.hidden = true;
+    return;
+  }
 
   photoGrid.innerHTML = visible
     .map(
@@ -241,6 +285,14 @@ const renderGallery = () => {
 
 loadMoreButton.addEventListener("click", () => {
   visibleCount += initialBatch;
+  renderGallery();
+});
+
+qualityToggle.addEventListener("change", () => {
+  highQualityOnly = qualityToggle.checked;
+  visibleCount = initialBatch;
+  renderStats();
+  renderAlbumFilters();
   renderGallery();
 });
 
