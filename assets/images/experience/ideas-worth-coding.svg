@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Ideas Worth Coding poster</title>
+  <desc id="desc">Poster for mobile app internship work.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fff0df"/>
+      <stop offset="100%" stop-color="#ffd6b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <circle cx="930" cy="190" r="168" fill="#cb7a2b" opacity=".28"/>
+  <circle cx="1010" cy="132" r="70" fill="#f5b36d" opacity=".42"/>
+  <text x="82" y="150" fill="#986234" font-family="Arial, Helvetica, sans-serif" font-size="44" letter-spacing="6">IDEAS WORTH CODING</text>
+  <text x="82" y="296" fill="#412819" font-family="Georgia, serif" font-size="122">Mobile</text>
+  <text x="82" y="402" fill="#734d31" font-family="Arial, Helvetica, sans-serif" font-size="34">React Native app design, Firebase, and early product iteration.</text>
+  <g transform="translate(760 332)">
+    <rect width="246" height="286" rx="34" fill="#3b2619"/>
+    <rect x="18" y="18" width="210" height="250" rx="24" fill="#fff7f1"/>
+    <circle cx="124" cy="92" r="34" fill="#cb7a2b"/>
+    <path d="M76 172c24-28 56-42 96-42s72 14 96 42" fill="none" stroke="#cb7a2b" stroke-width="14" stroke-linecap="round"/>
+  </g>
+</svg>

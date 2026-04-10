@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">BCI wheelchair simulator poster</title>
+  <desc id="desc">Poster for the Unity wheelchair simulator project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#112130"/>
+      <stop offset="100%" stop-color="#162718"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <circle cx="914" cy="372" r="94" fill="none" stroke="#d9b34e" stroke-width="16"/>
+  <circle cx="790" cy="372" r="58" fill="none" stroke="#d9b34e" stroke-width="14"/>
+  <path d="M822 246c34-32 76-48 126-48 74 0 130 40 170 112" fill="none" stroke="#61c8b0" stroke-width="14" stroke-linecap="round"/>
+  <path d="M808 192c18-46 56-86 118-110" fill="none" stroke="#61c8b0" stroke-width="10" stroke-linecap="round" opacity=".75"/>
+  <text x="82" y="150" fill="#a7c4bc" font-family="Arial, Helvetica, sans-serif" font-size="42" letter-spacing="6">BCI-WHEELCHAIR-SIMULATOR</text>
+  <text x="82" y="294" fill="#ffffff" font-family="Georgia, serif" font-size="118">Simulator</text>
+  <text x="82" y="400" fill="#c3d8d2" font-family="Arial, Helvetica, sans-serif" font-size="34">Applied research, accessibility, simulation, and training before hardware.</text>
+</svg>

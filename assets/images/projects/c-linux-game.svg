@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">C Linux Game poster</title>
+  <desc id="desc">Poster for the C and Linux game project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111619"/>
+      <stop offset="100%" stop-color="#243339"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <rect x="714" y="96" width="392" height="288" rx="26" fill="#0a0f13" stroke="#42565f"/>
+  <path d="M764 168h116M764 222h196M764 276h244M764 330h138" stroke="#73d0c2" stroke-width="12" stroke-linecap="round"/>
+  <path d="M966 168h82M974 222h74M1014 276h34" stroke="#f0b45d" stroke-width="12" stroke-linecap="round"/>
+  <text x="82" y="150" fill="#8ea6aa" font-family="Arial, Helvetica, sans-serif" font-size="42" letter-spacing="6">C_LINUX_GAME</text>
+  <text x="82" y="294" fill="#ffffff" font-family="Georgia, serif" font-size="120">Systems</text>
+  <text x="82" y="398" fill="#b7c7ca" font-family="Arial, Helvetica, sans-serif" font-size="34">Lower-level problem solving with C, Linux, and game-like interaction.</text>
+</svg>

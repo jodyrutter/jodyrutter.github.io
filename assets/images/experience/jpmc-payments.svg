@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">JPMorgan Chase payments poster</title>
+  <desc id="desc">Dark editorial poster for enterprise payments software work.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#13232d"/>
+      <stop offset="100%" stop-color="#0b1118"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop offset="0%" stop-color="#59c5c1"/>
+      <stop offset="100%" stop-color="#f0b45d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <circle cx="940" cy="170" r="180" fill="#173640" opacity=".65"/>
+  <circle cx="1020" cy="120" r="70" fill="#224952" opacity=".55"/>
+  <g opacity=".9">
+    <rect x="82" y="92" width="208" height="30" rx="15" fill="#d8e8e7" opacity=".16"/>
+    <text x="82" y="214" fill="#f6fbfa" font-family="Arial, Helvetica, sans-serif" font-size="54" letter-spacing="5">JPMORGAN CHASE</text>
+    <text x="82" y="330" fill="#f6fbfa" font-family="Georgia, serif" font-size="126">Payments</text>
+    <text x="82" y="430" fill="#b8cbc8" font-family="Arial, Helvetica, sans-serif" font-size="34">Legacy systems, release support, validation, reliability.</text>
+  </g>
+  <g transform="translate(80 522)">
+    <rect width="520" height="126" rx="28" fill="#10212a" stroke="#29424a"/>
+    <path d="M48 84h424" stroke="url(#line)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M92 44h82M248 44h120M436 44h36" stroke="#d7ece8" stroke-width="10" stroke-linecap="round" opacity=".72"/>
+  </g>
+</svg>

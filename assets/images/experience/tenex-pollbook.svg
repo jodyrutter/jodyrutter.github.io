@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Tenex poll book poster</title>
+  <desc id="desc">Poster for product engineering on election software.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f4f7fb"/>
+      <stop offset="100%" stop-color="#dce8f4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <rect x="760" y="86" width="280" height="408" rx="36" fill="#123d63"/>
+  <rect x="790" y="122" width="220" height="300" rx="20" fill="#f8fbff"/>
+  <rect x="848" y="448" width="106" height="16" rx="8" fill="#7aa0bf"/>
+  <path d="M832 182h136M832 232h136M832 282h100M832 332h136" stroke="#123d63" stroke-width="14" stroke-linecap="round"/>
+  <text x="82" y="148" fill="#58708d" font-family="Arial, Helvetica, sans-serif" font-size="44" letter-spacing="6">TENEX SOFTWARE</text>
+  <text x="82" y="292" fill="#122333" font-family="Georgia, serif" font-size="118">Poll Book</text>
+  <text x="82" y="398" fill="#516677" font-family="Arial, Helvetica, sans-serif" font-size="34">ASP.NET, Visual Basic, JavaScript, MySQL, AWS, and debugging in production.</text>
+  <g transform="translate(80 514)">
+    <rect width="580" height="150" rx="34" fill="#ffffff" opacity=".74" stroke="#c5d6e5"/>
+    <path d="M48 94h486" stroke="#123d63" stroke-width="8" stroke-linecap="round" opacity=".85"/>
+    <path d="M48 54h246" stroke="#4d6b83" stroke-width="12" stroke-linecap="round"/>
+    <path d="M338 54h78" stroke="#d27944" stroke-width="12" stroke-linecap="round"/>
+  </g>
+</svg>
