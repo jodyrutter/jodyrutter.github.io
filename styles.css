@@ -150,6 +150,7 @@ h3 {
   grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.9fr);
   gap: 24px;
   padding-top: 42px;
+  align-items: start;
 }
 
 .panel,
@@ -169,6 +170,34 @@ h3 {
 
 .hero-copy {
   padding: 36px;
+  background:
+    radial-gradient(circle at top right, rgba(28, 140, 128, 0.16), transparent 32%),
+    radial-gradient(circle at 20% 88%, rgba(203, 122, 43, 0.16), transparent 24%),
+    var(--surface);
+}
+
+.hero-kicker {
+  display: grid;
+  gap: 16px;
+}
+
+.hero-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-pill-row span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid rgba(24, 36, 47, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 700;
 }
 
 .eyebrow {
@@ -184,6 +213,10 @@ h3 {
   font-size: clamp(3rem, 6vw, 5.8rem);
   line-height: 0.94;
   max-width: 11ch;
+}
+
+.hero h1 span {
+  color: var(--accent-strong);
 }
 
 .lede,
@@ -280,14 +313,6 @@ h3 {
   gap: 24px;
 }
 
-.portrait-card {
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 20px;
-  align-items: center;
-  padding: 24px;
-}
-
 .portrait {
   width: 100%;
   aspect-ratio: 1;
@@ -296,8 +321,8 @@ h3 {
   border: 1px solid rgba(24, 36, 47, 0.1);
 }
 
-.portrait-copy h2,
-.focus-copy h2,
+.hero-stage-profile-copy h2,
+.mini-feature-copy h2,
 .insight-card h2,
 .section-heading h2,
 .contact-panel h2,
@@ -306,29 +331,170 @@ h3 {
   line-height: 0.98;
 }
 
-.focus-card {
-  display: grid;
-  background: #113832;
+.hero-stage {
+  min-height: 540px;
+  padding: 24px;
+  background: #0f1c25;
   color: white;
 }
 
-.focus-image {
-  min-height: 240px;
+.hero-stage-media,
+.mini-feature-image {
+  overflow: hidden;
+  border-radius: 24px;
 }
 
-.focus-image img {
+.hero-stage-media {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-stage-media img,
+.mini-feature-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.focus-copy {
-  padding: 24px;
+.hero-stage-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(145deg, rgba(7, 15, 22, 0.1), rgba(7, 15, 22, 0.82) 68%),
+    radial-gradient(circle at 14% 18%, rgba(255, 196, 123, 0.24), transparent 26%);
 }
 
-.focus-copy .eyebrow,
-.focus-copy p {
-  color: rgba(240, 247, 246, 0.82);
+.hero-stage-profile,
+.hero-stage-chip {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-stage-profile {
+  display: grid;
+  grid-template-columns: 138px minmax(0, 1fr);
+  gap: 18px;
+  max-width: 430px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 28px;
+  background: rgba(10, 20, 28, 0.58);
+  backdrop-filter: blur(18px);
+}
+
+.hero-stage-profile-copy p,
+.hero-stage-chip p,
+.mini-feature-card-dark .mini-feature-copy p,
+.mini-feature-card-dark .eyebrow {
+  color: rgba(240, 247, 246, 0.84);
+}
+
+.hero-stage-chip {
+  display: grid;
+  gap: 8px;
+  max-width: 280px;
+  margin-top: 18px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  background: rgba(9, 16, 22, 0.62);
+  backdrop-filter: blur(16px);
+}
+
+.hero-stage-chip-primary {
+  margin-top: 28px;
+  margin-left: auto;
+}
+
+.hero-stage-chip-secondary {
+  margin-top: 14px;
+  max-width: 340px;
+}
+
+.hero-stage-label {
+  color: rgba(215, 231, 227, 0.74);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-stage-chip strong {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.hero-stage-chip p {
+  margin: 0;
+}
+
+.hero-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.mini-feature-card {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.mini-feature-card-dark {
+  background: #113832;
+  color: white;
+}
+
+.mini-feature-card-light {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(244, 250, 247, 0.84)),
+    var(--surface);
+}
+
+.mini-feature-image {
+  min-height: 180px;
+}
+
+.mini-feature-image-tall {
+  min-height: 220px;
+}
+
+.mini-feature-copy {
+  display: grid;
+  align-content: start;
+}
+
+.mini-feature-card-light .mini-feature-copy {
+  gap: 4px;
+}
+
+.hero-metric-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.hero-metric {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid rgba(24, 36, 47, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.hero-metric strong {
+  font-size: 1rem;
+}
+
+.hero-metric span {
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.6;
 }
 
 .intro-grid {
@@ -421,7 +587,7 @@ h3 {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 160px 260px minmax(0, 1fr);
+  grid-template-columns: 170px 300px minmax(0, 1fr);
   gap: 24px;
   padding: 24px;
   border: 1px solid var(--line);
@@ -459,14 +625,15 @@ h3 {
   margin: 0;
   border: 1px solid rgba(24, 36, 47, 0.08);
   border-radius: 22px;
-  min-height: 216px;
+  aspect-ratio: 1200 / 760;
   box-shadow: 0 16px 30px rgba(35, 45, 57, 0.08);
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .timeline-visual img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .timeline-body {
@@ -519,14 +686,15 @@ h3 {
   margin: 0;
   border: 1px solid rgba(24, 36, 47, 0.08);
   border-radius: 22px;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1200 / 760;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.86);
 }
 
 .project-poster img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 280ms ease;
 }
 
@@ -710,6 +878,11 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .hero-mini-grid,
+  .hero-metric-row {
+    grid-template-columns: 1fr;
+  }
+
   .project-grid,
   .archive-list {
     grid-template-columns: 1fr;
@@ -746,7 +919,7 @@ h3 {
   }
 
   .hero-copy,
-  .portrait-card,
+  .hero-stage,
   .focus-copy,
   .insight-card,
   .resume-band-panel,
@@ -756,7 +929,7 @@ h3 {
     padding: 22px;
   }
 
-  .portrait-card,
+  .hero-stage-profile,
   .timeline-item {
     grid-template-columns: 1fr;
   }
@@ -764,6 +937,15 @@ h3 {
   .timeline-item {
     gap: 12px;
     padding: 20px;
+  }
+
+  .hero-stage {
+    min-height: 0;
+  }
+
+  .hero-stage-chip-primary,
+  .hero-stage-chip-secondary {
+    margin-left: 0;
   }
 
   .timeline-item h3,
