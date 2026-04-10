@@ -63,6 +63,18 @@ const experience = [
 
 const featuredProjects = [
   {
+    title: "Freedom Flight",
+    subtitle: "Arcade-style browser game, now playable on the portfolio",
+    repo: "Freedom-Flight",
+    description:
+      "A Construct-built game that now ships as a live HTML5 experience inside this site, turning an older repository into something visitors can launch and play immediately.",
+    stack: ["Construct", "HTML5", "Game Design", "Browser Play"],
+    url: "https://github.com/jodyrutter/Freedom-Flight",
+    liveUrl: "games/freedom-flight/index.html",
+    liveLabel: "Play on site",
+    image: "assets/images/projects/freedom-flight.svg"
+  },
+  {
     title: "Hearthboard",
     subtitle: "Self-hosted household calendar and schedule board",
     repo: "At-Home-Calendar",
@@ -189,6 +201,7 @@ if (featuredRoot) {
             ${project.stack.map((tag) => `<span>${tag}</span>`).join("")}
           </div>
           <div class="project-links">
+            ${project.liveUrl ? `<a href="${project.liveUrl}">${project.liveLabel || "View live"}</a>` : ""}
             <a href="${project.url}" target="_blank" rel="noreferrer">Open repository</a>
           </div>
         </article>

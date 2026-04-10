@@ -1,0 +1,40 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="48" fill="#081722"/>
+  <rect x="36" y="36" width="1128" height="688" rx="36" fill="url(#bg)"/>
+  <path d="M0 640C154 536 276 490 430 496C578 502 668 572 820 572C962 572 1072 510 1200 418V760H0V640Z" fill="url(#ground)" opacity="0.95"/>
+  <circle cx="934" cy="184" r="112" fill="#F3B15E" opacity="0.18"/>
+  <circle cx="934" cy="184" r="62" fill="#F3B15E" opacity="0.32"/>
+  <path d="M314 248L488 304L574 294L700 258L616 334L704 386L572 368L476 434L518 342L314 248Z" fill="#FFF5E8"/>
+  <path d="M306 254L350 286L470 320L564 306L650 280L570 334L642 370L560 360L486 404L510 338L306 254Z" fill="#1B4852" opacity="0.5"/>
+  <rect x="98" y="100" width="176" height="34" rx="17" fill="rgba(255,255,255,0.12)"/>
+  <text x="120" y="123" fill="#A8C1CB" font-family="Space Grotesk, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="0.24em">PLAYABLE NOW</text>
+  <text x="100" y="232" fill="#FFFFFF" font-family="Instrument Serif, Georgia, serif" font-size="104">Freedom</text>
+  <text x="100" y="322" fill="#FFFFFF" font-family="Instrument Serif, Georgia, serif" font-size="104">Flight</text>
+  <text x="104" y="392" fill="#B6C9D1" font-family="Space Grotesk, Arial, sans-serif" font-size="28">Arcade-style browser game exported from Construct</text>
+  <g opacity="0.9">
+    <rect x="100" y="488" width="246" height="112" rx="26" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.18)"/>
+    <text x="128" y="530" fill="#91A8B0" font-family="Space Grotesk, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0.18em">DELIVERY</text>
+    <text x="128" y="575" fill="#FFFFFF" font-family="Instrument Serif, Georgia, serif" font-size="48">HTML5 build</text>
+  </g>
+  <g opacity="0.9">
+    <rect x="376" y="488" width="246" height="112" rx="26" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.18)"/>
+    <text x="404" y="530" fill="#91A8B0" font-family="Space Grotesk, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0.18em">HOSTED ON</text>
+    <text x="404" y="575" fill="#FFFFFF" font-family="Instrument Serif, Georgia, serif" font-size="48">GitHub Pages</text>
+  </g>
+  <g opacity="0.9">
+    <rect x="652" y="488" width="246" height="112" rx="26" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.18)"/>
+    <text x="680" y="530" fill="#91A8B0" font-family="Space Grotesk, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0.18em">STACK</text>
+    <text x="680" y="575" fill="#FFFFFF" font-family="Instrument Serif, Georgia, serif" font-size="48">Construct 2</text>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="66" y1="48" x2="1128" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102B3C"/>
+      <stop offset="0.52" stop-color="#143B46"/>
+      <stop offset="1" stop-color="#4D3427"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="600" y1="438" x2="600" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11373F"/>
+      <stop offset="1" stop-color="#07141B"/>
+    </linearGradient>
+  </defs>
+</svg>

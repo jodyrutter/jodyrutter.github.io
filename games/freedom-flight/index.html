@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freedom Flight | Jody Rutter</title>
+    <meta
+      name="description"
+      content="Play Freedom Flight, an arcade-style HTML5 browser game by Jody Rutter, embedded directly into the portfolio site."
+    />
+    <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-aura" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="Back to Jody Rutter home">
+        <span class="brand-mark">JR</span>
+        <span class="brand-text">Jody Rutter</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Game page navigation">
+        <a href="../../index.html#projects">Projects</a>
+        <a href="../../index.html#games">Games</a>
+        <a href="../../photography/index.html">Photography</a>
+        <a href="https://github.com/jodyrutter/Freedom-Flight" target="_blank" rel="noreferrer">Repo</a>
+      </nav>
+    </header>
+
+    <main class="game-page-main">
+      <section class="section game-page-hero">
+        <div class="game-page-copy panel reveal is-visible">
+          <p class="eyebrow">Playable Work</p>
+          <h1>Freedom Flight</h1>
+          <p class="game-page-lede">
+            A browser-playable version of one of my earlier game builds, now living inside the
+            portfolio instead of sitting as a dormant repo artifact.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#play">Jump into the game</a>
+            <a class="button button-secondary" href="play/index.html" target="_blank" rel="noreferrer">
+              Open raw game build
+            </a>
+          </div>
+          <div class="game-note-grid">
+            <article class="game-note">
+              <span>Format</span>
+              <strong>Construct HTML5 export</strong>
+            </article>
+            <article class="game-note">
+              <span>Hosting</span>
+              <strong>Static GitHub Pages deployment</strong>
+            </article>
+            <article class="game-note">
+              <span>Best On</span>
+              <strong>Desktop browser with keyboard controls</strong>
+            </article>
+          </div>
+        </div>
+
+        <div class="game-page-visual panel reveal is-visible">
+          <figure class="game-preview">
+            <img src="play/images/startscreenbg.png" alt="Freedom Flight game scene preview." />
+          </figure>
+          <div class="game-preview-card">
+            <span>Now Featured</span>
+            <strong>The site can showcase software, photography, and a playable game in one place.</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section game-player-section" id="play">
+        <div class="section-heading reveal is-visible">
+          <p class="eyebrow">Play</p>
+          <h2>Launch the embedded build</h2>
+          <p>
+            The player below runs the original export inside an isolated frame so the portfolio can
+            keep its own navigation and layout while the game stays self-contained.
+          </p>
+        </div>
+
+        <div class="game-shell panel reveal is-visible">
+          <div class="game-shell-toolbar">
+            <span>Embedded Player</span>
+            <a href="play/index.html" target="_blank" rel="noreferrer">Open full build in a new tab</a>
+          </div>
+          <div class="game-frame-wrap">
+            <iframe
+              class="game-frame"
+              src="play/index.html"
+              title="Freedom Flight game player"
+              loading="eager"
+              allow="fullscreen"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="current-year"></span> Jody Rutter. Freedom Flight hosted on GitHub Pages.</p>
+    </footer>
+
+    <script>
+      const yearRoot = document.querySelector("#current-year");
+      if (yearRoot) {
+        yearRoot.textContent = new Date().getFullYear();
+      }
+    </script>
+  </body>
+</html>

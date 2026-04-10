@@ -1,0 +1,178 @@
+.game-page-main,
+.game-page-main .section,
+.game-page-main .site-footer {
+  width: min(var(--max-width), calc(100% - 28px));
+  margin: 0 auto;
+}
+
+.game-page-main {
+  display: grid;
+  gap: 0;
+}
+
+.game-page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.95fr);
+  gap: 24px;
+  padding-top: 24px;
+}
+
+.game-page-copy,
+.game-page-visual,
+.game-shell {
+  padding: 30px;
+}
+
+.game-page-copy {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.game-page-copy h1 {
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  line-height: 0.92;
+}
+
+.game-page-lede {
+  margin: 0;
+  max-width: 56ch;
+  color: var(--muted);
+  font-size: 1.04rem;
+}
+
+.game-note-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.game-note {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid rgba(24, 36, 47, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.game-note span,
+.game-preview-card span,
+.game-shell-toolbar span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.game-page-visual {
+  display: grid;
+  gap: 16px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 191, 112, 0.18), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(28, 140, 128, 0.16), transparent 24%),
+    rgba(255, 250, 243, 0.92);
+}
+
+.game-preview {
+  overflow: hidden;
+  margin: 0;
+  min-height: 360px;
+  border: 1px solid rgba(24, 36, 47, 0.08);
+  border-radius: 28px;
+  background: #07131b;
+}
+
+.game-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-preview-card {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid rgba(24, 36, 47, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.game-preview-card strong {
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.game-player-section {
+  padding-top: 12px;
+}
+
+.game-shell {
+  background:
+    radial-gradient(circle at top left, rgba(28, 140, 128, 0.12), transparent 20%),
+    radial-gradient(circle at top right, rgba(255, 191, 112, 0.16), transparent 24%),
+    rgba(255, 250, 243, 0.92);
+}
+
+.game-shell-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.game-shell-toolbar a {
+  color: var(--accent-strong);
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.game-frame-wrap {
+  overflow: hidden;
+  border: 1px solid rgba(24, 36, 47, 0.08);
+  border-radius: 28px;
+  background: #050c12;
+  box-shadow: 0 28px 54px rgba(18, 28, 36, 0.16);
+}
+
+.game-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 720px;
+  border: 0;
+  background: #000;
+}
+
+@media (max-width: 1060px) {
+  .game-page-hero,
+  .game-note-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-frame {
+    min-height: 620px;
+  }
+}
+
+@media (max-width: 760px) {
+  .game-page-copy,
+  .game-page-visual,
+  .game-shell {
+    padding: 22px;
+  }
+
+  .game-shell-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .game-frame {
+    min-height: 70vh;
+    aspect-ratio: auto;
+  }
+}
