@@ -31,16 +31,36 @@ const formatAlbumName = (name) => {
 
 const isPanorama = (photo) => photo.width / Math.max(photo.height, 1) >= 2.2;
 
+const comparePhotos = (left, right) => {
+  const leftLocation = left.locationLabel || left.album;
+  const rightLocation = right.locationLabel || right.album;
+  const locationDiff = leftLocation.localeCompare(rightLocation);
+  if (locationDiff !== 0) {
+    return locationDiff;
+  }
+
+  const leftDate = left.dateLabel || left.yearMonth || "";
+  const rightDate = right.dateLabel || right.yearMonth || "";
+  const dateDiff = rightDate.localeCompare(leftDate);
+  if (dateDiff !== 0) {
+    return dateDiff;
+  }
+
+  return left.name.localeCompare(right.name);
+};
+
 const getFilteredPhotos = () => {
   if (!manifest) {
     return [];
   }
 
   if (selectedAlbum === "all") {
-    return panoramaOnly ? manifest.photos.filter((photo) => isPanorama(photo)) : manifest.photos;
+    return (panoramaOnly ? manifest.photos.filter((photo) => isPanorama(photo)) : manifest.photos).sort(comparePhotos);
   }
 
-  return manifest.photos.filter((photo) => photo.album === selectedAlbum && (!panoramaOnly || isPanorama(photo)));
+  return manifest.photos
+    .filter((photo) => photo.album === selectedAlbum && (!panoramaOnly || isPanorama(photo)))
+    .sort(comparePhotos);
 };
 
 const renderStats = () => {
@@ -48,26 +68,24 @@ const renderStats = () => {
     return;
   }
 
-  const topAlbums = [...manifest.albums].sort((a, b) => b.count - a.count).slice(0, 1);
-  const largest = topAlbums[0];
   const panoramaCount = manifest.photos.filter((photo) => isPanorama(photo)).length;
 
   albumStats.innerHTML = `
     <article class="album-stat">
       <strong>${manifest.total.toLocaleString()}</strong>
-      <span>Total resized photos in the web gallery</span>
+      <span>Unique photos in the gallery after cleanup</span>
     </article>
     <article class="album-stat">
-      <strong>${manifest.albums.length.toLocaleString()}</strong>
-      <span>Top-level albums available to browse</span>
+      <strong>${manifest.duplicatesRemoved.toLocaleString()}</strong>
+      <span>Exact duplicates removed from the web gallery build</span>
     </article>
     <article class="album-stat">
       <strong>${panoramaCount.toLocaleString()}</strong>
       <span>Stitched panoramas with drag view support</span>
     </article>
     <article class="album-stat">
-      <strong>${largest ? formatAlbumName(largest.name) : "N/A"}</strong>
-      <span>${largest ? `${largest.count.toLocaleString()} photos in the largest album` : "Album data unavailable"}</span>
+      <strong>${manifest.albums.length.toLocaleString()}</strong>
+      <span>Location groups available to browse</span>
     </article>
   `;
 };
@@ -166,7 +184,7 @@ const openPanorama = (photo) => {
 
 const openLightbox = (photo) => {
   lightboxTitle.textContent = photo.name;
-  lightboxDetails.textContent = `${formatAlbumName(photo.album)} - ${photo.width}x${photo.height}`;
+  lightboxDetails.textContent = `${formatAlbumName(photo.locationLabel || photo.album)} - ${photo.dateLabel || photo.yearMonth} - ${photo.width}x${photo.height}`;
 
   if (isPanorama(photo)) {
     openPanorama(photo);
@@ -198,7 +216,7 @@ const renderGallery = () => {
           </button>
           <div class="photo-card-meta">
             <h3>${photo.name}</h3>
-            <p>${formatAlbumName(photo.album)}${isPanorama(photo) ? " - Panorama View" : ""}</p>
+            <p>${formatAlbumName(photo.locationLabel || photo.album)} - ${photo.yearMonth}${isPanorama(photo) ? " - Panorama View" : ""}</p>
           </div>
         </article>
       `

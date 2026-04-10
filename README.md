@@ -23,6 +23,13 @@ To rebuild the gallery and manifest:
 .\scripts\generate-photography.ps1
 ```
 
+The rebuild script:
+
+- removes exact duplicate photos from the web gallery output
+- keeps the best source copy when duplicates exist in multiple folders
+- organizes generated gallery files by location when GPS metadata is available
+- falls back to year-month and `Unknown Location` when needed
+
 ## Repository recommendation
 
 If you want this to be your main GitHub Pages site, create the repository as:
