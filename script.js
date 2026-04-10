@@ -120,66 +120,74 @@ const featuredRoot = document.querySelector("#featured-projects");
 const archiveRoot = document.querySelector("#github-archive");
 const yearRoot = document.querySelector("#current-year");
 
-experienceRoot.innerHTML = experience
-  .map(
-    (item) => `
-      <article class="timeline-item reveal">
-        <div class="timeline-date">${item.period}</div>
-        <div>
-          <h3>${item.role}</h3>
-          <strong>${item.company}</strong>
-          <p>${item.summary}</p>
-          <div class="timeline-meta">
-            ${item.skills.map((skill) => `<span>${skill}</span>`).join("")}
-          </div>
-        </div>
-      </article>
-    `
-  )
-  .join("");
-
-featuredRoot.innerHTML = featuredProjects
-  .map(
-    (project) => `
-      <article class="project-card reveal">
-        <div class="project-topline">
+if (experienceRoot) {
+  experienceRoot.innerHTML = experience
+    .map(
+      (item) => `
+        <article class="timeline-item reveal">
+          <div class="timeline-date">${item.period}</div>
           <div>
-            <p class="eyebrow">${project.repo}</p>
-            <h3>${project.title}</h3>
+            <h3>${item.role}</h3>
+            <strong>${item.company}</strong>
+            <p>${item.summary}</p>
+            <div class="timeline-meta">
+              ${item.skills.map((skill) => `<span>${skill}</span>`).join("")}
+            </div>
           </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+if (featuredRoot) {
+  featuredRoot.innerHTML = featuredProjects
+    .map(
+      (project) => `
+        <article class="project-card reveal">
+          <div class="project-topline">
+            <div>
+              <p class="eyebrow">${project.repo}</p>
+              <h3>${project.title}</h3>
+            </div>
+            <div class="project-meta">
+              ${project.stack.slice(0, 2).map((tag) => `<span>${tag}</span>`).join("")}
+            </div>
+          </div>
+          <p><strong>${project.subtitle}</strong></p>
+          <p>${project.description}</p>
+          <div class="stack-tags">
+            ${project.stack.map((tag) => `<span>${tag}</span>`).join("")}
+          </div>
+          <div class="project-links">
+            <a href="${project.url}" target="_blank" rel="noreferrer">Open repository</a>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
+if (archiveRoot) {
+  archiveRoot.innerHTML = githubArchive
+    .map(
+      (repo) => `
+        <article class="archive-item">
           <div class="project-meta">
-            ${project.stack.slice(0, 2).map((tag) => `<span>${tag}</span>`).join("")}
+            <span class="archive-pill">${repo.language}</span>
           </div>
-        </div>
-        <p><strong>${project.subtitle}</strong></p>
-        <p>${project.description}</p>
-        <div class="stack-tags">
-          ${project.stack.map((tag) => `<span>${tag}</span>`).join("")}
-        </div>
-        <div class="project-links">
-          <a href="${project.url}" target="_blank" rel="noreferrer">Open repository</a>
-        </div>
-      </article>
-    `
-  )
-  .join("");
+          <h4>${repo.name}</h4>
+          <p>${repo.description}</p>
+          <a href="${repo.url}" target="_blank" rel="noreferrer">View on GitHub</a>
+        </article>
+      `
+    )
+    .join("");
+}
 
-archiveRoot.innerHTML = githubArchive
-  .map(
-    (repo) => `
-      <article class="archive-item">
-        <div class="project-meta">
-          <span class="archive-pill">${repo.language}</span>
-        </div>
-        <h4>${repo.name}</h4>
-        <p>${repo.description}</p>
-        <a href="${repo.url}" target="_blank" rel="noreferrer">View on GitHub</a>
-      </article>
-    `
-  )
-  .join("");
-
-yearRoot.textContent = new Date().getFullYear();
+if (yearRoot) {
+  yearRoot.textContent = new Date().getFullYear();
+}
 
 const observer = new IntersectionObserver(
   (entries) => {

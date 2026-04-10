@@ -12,6 +12,17 @@ python -m http.server 8000
 
 Then open `http://localhost:8000`.
 
+## Photography generation
+
+The drone gallery uses resized copies stored inside the repo, while the originals remain untouched
+in `E:\Drone`.
+
+To rebuild the gallery and manifest:
+
+```powershell
+.\scripts\generate-photography.ps1
+```
+
 ## Repository recommendation
 
 If you want this to be your main GitHub Pages site, create the repository as:

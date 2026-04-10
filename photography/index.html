@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jody Rutter | Drone Photography</title>
+    <meta
+      name="description"
+      content="Aerial photography gallery by Jody Rutter, featuring drone images organized into browsable albums."
+    />
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="photography-body">
+    <div class="page-aura" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Jody Rutter home">
+        <span class="brand-mark">JR</span>
+        <span class="brand-text">Jody Rutter</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html">Main Site</a>
+        <a href="#albums">Albums</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section photo-hero">
+        <div class="photo-hero-copy panel reveal">
+          <p class="eyebrow">Drone Photography</p>
+          <h1>An aerial archive, organized for the web.</h1>
+          <p class="lede">
+            This gallery is a dedicated second page within the portfolio, built from resized web
+            copies of the drone library so the originals stay untouched. Browse by album, then
+            open any shot in a larger view.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#gallery">Open Gallery</a>
+            <a class="button button-secondary" href="../index.html">Back to Portfolio</a>
+          </div>
+        </div>
+
+        <div class="photo-hero-rail">
+          <figure class="hero-photo reveal">
+            <img src="../assets/images/largo-sunset-drone.jpg" alt="Sunset aerial photograph by Jody Rutter." />
+          </figure>
+          <figure class="hero-photo reveal">
+            <img src="../assets/images/island-life-drone.jpg" alt="Island aerial photograph by Jody Rutter." />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section album-section" id="albums">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Albums</p>
+          <h2>Browse by folder</h2>
+          <p>
+            The gallery uses album filters so the photography section stays usable even with a
+            large library behind it.
+          </p>
+        </div>
+
+        <div id="album-stats" class="album-stats panel reveal"></div>
+        <div id="album-filters" class="album-filters reveal"></div>
+      </section>
+
+      <section class="section gallery-section" id="gallery">
+        <div class="gallery-toolbar reveal">
+          <div>
+            <p class="eyebrow">Gallery</p>
+            <h2 id="gallery-title">Loading photos...</h2>
+          </div>
+          <p id="gallery-summary" class="gallery-summary"></p>
+        </div>
+
+        <div id="photo-grid" class="photo-grid"></div>
+        <div class="gallery-actions reveal">
+          <button id="load-more" class="button button-secondary" type="button">Load More</button>
+        </div>
+      </section>
+    </main>
+
+    <dialog id="lightbox" class="lightbox">
+      <div class="lightbox-shell">
+        <button id="close-lightbox" class="lightbox-close" type="button" aria-label="Close gallery view">
+          ×
+        </button>
+        <img id="lightbox-image" alt="" />
+        <div class="lightbox-meta">
+          <h3 id="lightbox-title"></h3>
+          <p id="lightbox-details"></p>
+        </div>
+      </div>
+    </dialog>
+
+    <script type="module" src="../script.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
