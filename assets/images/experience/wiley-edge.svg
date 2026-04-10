@@ -1,23 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Wiley Edge poster</title>
-  <desc id="desc">Poster for consultant software engineering work.</desc>
+  <title id="title">Wiley Edge consulting poster</title>
+  <desc id="desc">Poster representing consulting and enterprise support work.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#1d1740"/>
-      <stop offset="100%" stop-color="#0f1123"/>
+      <stop offset="100%" stop-color="#101222"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="760" fill="url(#bg)"/>
-  <path d="M790 0 1200 0 1200 350Z" fill="#6b59d8" opacity=".34"/>
-  <path d="M920 0 1200 0 1200 470Z" fill="#9989ef" opacity=".2"/>
-  <text x="82" y="136" fill="#d2cbff" font-family="Arial, Helvetica, sans-serif" font-size="48" letter-spacing="6">WILEY EDGE</text>
-  <text x="82" y="286" fill="#ffffff" font-family="Georgia, serif" font-size="120">Consulting</text>
-  <text x="82" y="390" fill="#c6c2eb" font-family="Arial, Helvetica, sans-serif" font-size="34">Fast ramp-up, enterprise support, high-accountability delivery.</text>
-  <g transform="translate(80 500)">
-    <rect width="540" height="148" rx="34" fill="#181b33" stroke="#4d4c75"/>
-    <path d="M48 102c88-36 160-36 248 0s160 36 244-2" fill="none" stroke="#9e93ff" stroke-width="8" stroke-linecap="round"/>
-    <circle cx="112" cy="74" r="18" fill="#ffffff" opacity=".86"/>
-    <circle cx="286" cy="74" r="18" fill="#ffffff" opacity=".62"/>
-    <circle cx="474" cy="74" r="18" fill="#ffffff" opacity=".82"/>
+  <path d="M788 0h412v330z" fill="#6c5bd9" opacity=".34"/>
+  <path d="M916 0h284v450z" fill="#9a8cf0" opacity=".2"/>
+  <text x="120" y="170" fill="#d7d1ff" font-family="Arial, Helvetica, sans-serif" font-size="34" letter-spacing="5">WILEY EDGE</text>
+  <text x="120" y="312" fill="#ffffff" font-family="Georgia, serif" font-size="108">Consulting</text>
+  <text x="120" y="398" fill="#c9c4ea" font-family="Arial, Helvetica, sans-serif" font-size="30">Engineering</text>
+  <text x="120" y="468" fill="#c9c4ea" font-family="Arial, Helvetica, sans-serif" font-size="28">Fast ramp-up, enterprise support, and high-accountability delivery.</text>
+  <g transform="translate(120 546)">
+    <rect width="470" height="94" rx="24" fill="#191b32" stroke="#4d4c75"/>
+    <path d="M42 64c92-34 170-34 258 0s120 34 128 32" fill="none" stroke="#9e93ff" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="94" cy="42" r="12" fill="#ffffff" opacity=".88"/>
+    <circle cx="236" cy="42" r="12" fill="#ffffff" opacity=".62"/>
+    <circle cx="378" cy="42" r="12" fill="#ffffff" opacity=".82"/>
   </g>
 </svg>

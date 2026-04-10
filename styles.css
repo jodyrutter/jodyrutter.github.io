@@ -146,11 +146,45 @@ h3 {
 }
 
 .hero {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.9fr);
   gap: 24px;
-  padding-top: 42px;
+  padding: 34px;
+  margin-top: 18px;
   align-items: start;
+  border: 1px solid rgba(17, 28, 36, 0.14);
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 85% 16%, rgba(255, 191, 112, 0.2), transparent 18%),
+    radial-gradient(circle at 8% 90%, rgba(88, 196, 181, 0.22), transparent 18%),
+    linear-gradient(135deg, rgba(11, 18, 24, 0.96), rgba(20, 58, 55, 0.88) 58%, rgba(74, 52, 38, 0.76));
+  box-shadow: 0 34px 90px rgba(27, 36, 45, 0.22);
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+}
+
+.hero::before {
+  top: -100px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255, 210, 150, 0.22), transparent 68%);
+}
+
+.hero::after {
+  bottom: -110px;
+  left: -90px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(92, 203, 188, 0.2), transparent 70%);
 }
 
 .panel,
@@ -915,7 +949,7 @@ h3 {
   }
 
   .hero {
-    padding-top: 28px;
+    padding: 20px;
   }
 
   .hero-copy,

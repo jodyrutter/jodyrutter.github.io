@@ -8,11 +8,12 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="760" fill="url(#bg)"/>
-  <circle cx="914" cy="372" r="94" fill="none" stroke="#d9b34e" stroke-width="16"/>
-  <circle cx="790" cy="372" r="58" fill="none" stroke="#d9b34e" stroke-width="14"/>
-  <path d="M822 246c34-32 76-48 126-48 74 0 130 40 170 112" fill="none" stroke="#61c8b0" stroke-width="14" stroke-linecap="round"/>
-  <path d="M808 192c18-46 56-86 118-110" fill="none" stroke="#61c8b0" stroke-width="10" stroke-linecap="round" opacity=".75"/>
-  <text x="82" y="150" fill="#a7c4bc" font-family="Arial, Helvetica, sans-serif" font-size="42" letter-spacing="6">BCI-WHEELCHAIR-SIMULATOR</text>
-  <text x="82" y="294" fill="#ffffff" font-family="Georgia, serif" font-size="118">Simulator</text>
-  <text x="82" y="400" fill="#c3d8d2" font-family="Arial, Helvetica, sans-serif" font-size="34">Applied research, accessibility, simulation, and training before hardware.</text>
+  <circle cx="910" cy="360" r="98" fill="none" stroke="#d9b34e" stroke-width="16"/>
+  <circle cx="790" cy="360" r="58" fill="none" stroke="#d9b34e" stroke-width="14"/>
+  <path d="M820 246c34-32 76-48 126-48 74 0 130 40 170 112" fill="none" stroke="#61c8b0" stroke-width="14" stroke-linecap="round"/>
+  <path d="M810 192c18-46 56-86 118-110" fill="none" stroke="#61c8b0" stroke-width="10" stroke-linecap="round" opacity=".75"/>
+  <text x="120" y="166" fill="#a7c4bc" font-family="Arial, Helvetica, sans-serif" font-size="34" letter-spacing="5">BCI-WHEELCHAIR-SIMULATOR</text>
+  <text x="120" y="308" fill="#ffffff" font-family="Georgia, serif" font-size="108">Simulator</text>
+  <text x="120" y="394" fill="#c3d8d2" font-family="Arial, Helvetica, sans-serif" font-size="30">Assistive Mobility</text>
+  <text x="120" y="466" fill="#c3d8d2" font-family="Arial, Helvetica, sans-serif" font-size="28">Research, accessibility, simulation, and training before hardware.</text>
 </svg>

@@ -8,10 +8,11 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="760" fill="url(#bg)"/>
-  <circle cx="852" cy="300" r="138" fill="#a65b79" opacity=".82"/>
-  <circle cx="964" cy="300" r="138" fill="#d78356" opacity=".74"/>
-  <circle cx="908" cy="196" r="138" fill="#7f6fd1" opacity=".68"/>
-  <text x="82" y="152" fill="#8c687c" font-family="Arial, Helvetica, sans-serif" font-size="42" letter-spacing="6">ENSEMBLE</text>
-  <text x="82" y="294" fill="#37222b" font-family="Georgia, serif" font-size="122">Matching</text>
-  <text x="82" y="398" fill="#735262" font-family="Arial, Helvetica, sans-serif" font-size="34">A concept for helping local musicians find collaborators and creative overlap.</text>
+  <circle cx="862" cy="308" r="128" fill="#a65b79" opacity=".82"/>
+  <circle cx="964" cy="308" r="128" fill="#d78356" opacity=".74"/>
+  <circle cx="912" cy="214" r="128" fill="#7f6fd1" opacity=".68"/>
+  <text x="120" y="166" fill="#8c687c" font-family="Arial, Helvetica, sans-serif" font-size="34" letter-spacing="5">ENSEMBLE</text>
+  <text x="120" y="308" fill="#37222b" font-family="Georgia, serif" font-size="108">Matching</text>
+  <text x="120" y="394" fill="#735262" font-family="Arial, Helvetica, sans-serif" font-size="30">Musicians</text>
+  <text x="120" y="466" fill="#735262" font-family="Arial, Helvetica, sans-serif" font-size="28">A concept for helping local musicians find collaborators nearby.</text>
 </svg>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
   <title id="title">Hearthboard project poster</title>
-  <desc id="desc">Poster for a household calendar app.</desc>
+  <desc id="desc">Poster for a self-hosted household dashboard and calendar.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#fff6ea"/>
@@ -8,12 +8,13 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="760" fill="url(#bg)"/>
-  <rect x="730" y="92" width="360" height="280" rx="36" fill="#ffffff" stroke="#c9ddd4"/>
-  <path d="M730 170h360" stroke="#d8e7e1" stroke-width="8"/>
-  <path d="M770 218h280M770 272h280M770 326h280" stroke="#9eb6af" stroke-width="10" stroke-linecap="round"/>
-  <rect x="760" y="118" width="74" height="34" rx="17" fill="#cb7a2b"/>
-  <rect x="852" y="118" width="74" height="34" rx="17" fill="#1c8c80"/>
-  <text x="82" y="150" fill="#70786f" font-family="Arial, Helvetica, sans-serif" font-size="42" letter-spacing="6">AT-HOME-CALENDAR</text>
-  <text x="82" y="294" fill="#1a252f" font-family="Georgia, serif" font-size="120">Hearthboard</text>
-  <text x="82" y="398" fill="#596864" font-family="Arial, Helvetica, sans-serif" font-size="34">A calm, local-first board for schedules, chores, and family rhythm.</text>
+  <rect x="760" y="112" width="318" height="252" rx="34" fill="#ffffff" stroke="#c9ddd4"/>
+  <path d="M760 180h318" stroke="#d8e7e1" stroke-width="8"/>
+  <path d="M796 228h246M796 280h246M796 332h246" stroke="#9eb6af" stroke-width="10" stroke-linecap="round"/>
+  <rect x="792" y="138" width="64" height="30" rx="15" fill="#cb7a2b"/>
+  <rect x="874" y="138" width="64" height="30" rx="15" fill="#1c8c80"/>
+  <text x="120" y="168" fill="#70786f" font-family="Arial, Helvetica, sans-serif" font-size="34" letter-spacing="5">AT-HOME-CALENDAR</text>
+  <text x="120" y="312" fill="#1a252f" font-family="Georgia, serif" font-size="108">Hearthboard</text>
+  <text x="120" y="398" fill="#596864" font-family="Arial, Helvetica, sans-serif" font-size="30">Home Dashboard</text>
+  <text x="120" y="468" fill="#596864" font-family="Arial, Helvetica, sans-serif" font-size="28">A calm local-first board for schedules, chores, and household rhythm.</text>
 </svg>
