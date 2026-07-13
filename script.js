@@ -4,9 +4,9 @@ const experience = [
     role: "Software Engineer II",
     company: "JPMorgan Chase & Co.",
     summary:
-      "Support payment-processing software in a legacy environment, working with C and Stratus OpenVOS while contributing to releases, production validation, and operational troubleshooting.",
-    skills: ["C", "Stratus OpenVOS", "SQL", "Splunk", "Release Support"],
-    highlight: "Production-facing software in a reliability-first payments environment.",
+      "Develop, test, and maintain C-based payment-processing applications on Stratus OpenVOS. Support production releases and issue investigation with SQL and Splunk, implement PCI 4.0 data-protection updates, and contribute to Java/Spring Boot functional-test automation for interconnected payment engines.",
+    skills: ["C", "Java", "Spring Boot", "SQL", "Splunk", "OpenVOS"],
+    highlight: "Enterprise payments engineering with production validation, on-call support, and PCI data protection.",
     image: "assets/images/experience/jpmc-payments.svg"
   },
   {
@@ -14,9 +14,9 @@ const experience = [
     role: "Consultant Software Engineer",
     company: "Wiley Edge",
     summary:
-      "Provided development support for JPMorgan Chase while ramping quickly on a legacy stack and production workflows that required careful validation and reliability-minded changes.",
-    skills: ["Consulting", "Legacy Systems", "Production Support", "Validation"],
-    highlight: "Fast ramp-up work with high expectations around stability and support.",
+      "Completed an intensive C, Linux, and banking-technology training program before joining JPMorgan Chase as a consultant engineer. Contributed to development, testing, and production support for Stratus OpenVOS applications, then converted to a permanent Software Engineer II role.",
+    skills: ["C", "Linux", "Banking Technology", "OpenVOS", "Production Support"],
+    highlight: "Consulting-to-permanent path in a high-accountability financial technology environment.",
     image: "assets/images/experience/wiley-edge.svg"
   },
   {
@@ -24,9 +24,9 @@ const experience = [
     role: "Freelance Software Engineer",
     company: "Self-Employed",
     summary:
-      "Built full-stack software for clients and translated product ideas into working applications, using tools such as React, React Native, and Django.",
-    skills: ["React", "React Native", "Django", "Full-Stack"],
-    highlight: "Independent builds where communication and shipping mattered as much as code.",
+      "Delivered client applications from design outline to working product, including a telehealth portal built with React and Tailwind CSS and an SMS-based quiz application using React and JavaScript server-side logic.",
+    skills: ["React", "JavaScript", "Tailwind CSS", "Client Delivery"],
+    highlight: "Direct client communication and focused end-to-end delivery on short timelines.",
     image: "assets/images/experience/freelance-studio.svg"
   },
   {
@@ -34,9 +34,9 @@ const experience = [
     role: "Software Engineer",
     company: "Tenex Software Solutions",
     summary:
-      "Debugged and improved software for an online poll book product, working in ASP.NET with a Visual Basic backend and JavaScript, HTML, CSS, MySQL, and AWS.",
+      "Delivered feature work and bug fixes for election and polling software across front-end, back-end, and database layers. Maintained ASP.NET applications with a Visual Basic backend, JavaScript/HTML/CSS front end, MySQL data layer, and AWS-supported deployment environment.",
     skills: ["ASP.NET", "Visual Basic", "JavaScript", "MySQL", "AWS"],
-    highlight: "Product work with real operational stakes and a broad day-to-day stack.",
+    highlight: "Full-stack product work for operational software with real-world reliability requirements.",
     image: "assets/images/experience/tenex-pollbook.svg"
   },
   {
@@ -44,9 +44,9 @@ const experience = [
     role: "Software Intern",
     company: "Ideas Worth Coding",
     summary:
-      "Designed and built Swolemate, a React Native app for matching gym partners, with Firebase used as the backing data platform.",
-    skills: ["React Native", "Firebase", "Mobile App Design"],
-    highlight: "A mobile-first build centered on matching, UX, and quick product iteration.",
+      "Contributed to mobile and web application features for a Tampa startup, using React Native, React, JavaScript, Firebase, APIs, and GitHub while collaborating in a small product-development team.",
+    skills: ["React Native", "React", "Firebase", "APIs"],
+    highlight: "Early product engineering experience in a collaborative startup environment.",
     image: "assets/images/experience/ideas-worth-coding.svg"
   },
   {
@@ -54,26 +54,14 @@ const experience = [
     role: "Undergraduate Researcher",
     company: "CARRT Lab, University of South Florida",
     summary:
-      "Worked on a brain-computer-interface wheelchair project using Unity and C# for simulation, plus Arduino and Bluetooth integration for physical control experiments.",
-    skills: ["Unity", "C#", "Arduino", "C++", "Research Prototyping"],
-    highlight: "Research that blended simulation, hardware control, and accessibility thinking.",
+      "Contributed to software and research work around brain-computer-interface wheelchair simulation, using Unity, C#, C++, Arduino scripting, and Bluetooth-based hardware communication in an interdisciplinary accessibility project.",
+    skills: ["Unity", "C#", "C++", "Arduino", "Bluetooth"],
+    highlight: "Applied software research spanning simulation, hardware integration, and assistive technology.",
     image: "assets/images/experience/carrt-lab.svg"
   }
 ];
 
 const featuredProjects = [
-  {
-    title: "Freedom Flight",
-    subtitle: "Arcade-style browser game, now playable on the portfolio",
-    repo: "Freedom-Flight",
-    description:
-      "A Construct-built game that now ships as a live HTML5 experience inside this site, turning an older repository into something visitors can launch and play immediately.",
-    stack: ["Construct", "HTML5", "Game Design", "Browser Play"],
-    url: "https://github.com/jodyrutter/Freedom-Flight",
-    liveUrl: "games/freedom-flight/index.html",
-    liveLabel: "Play on site",
-    image: "assets/images/projects/freedom-flight.svg"
-  },
   {
     title: "Hearthboard",
     subtitle: "Self-hosted household calendar and schedule board",
@@ -113,6 +101,18 @@ const featuredProjects = [
     stack: ["C", "Linux", "Systems Thinking"],
     url: "https://github.com/jodyrutter/C_Linux_Game",
     image: "assets/images/projects/c-linux-game.svg"
+  },
+  {
+    title: "Freedom Flight",
+    subtitle: "Personal HTML5 game project",
+    repo: "Freedom-Flight",
+    description:
+      "A Construct-built browser game preserved as a live HTML5 deployment, showing an earlier project carried through to a playable web experience.",
+    stack: ["Construct", "HTML5", "Game Design", "Browser Play"],
+    url: "https://github.com/jodyrutter/Freedom-Flight",
+    liveUrl: "games/freedom-flight/index.html",
+    liveLabel: "Play project",
+    image: "assets/images/projects/freedom-flight.svg"
   }
 ];
 
