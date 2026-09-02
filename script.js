@@ -1,6 +1,6 @@
 const experience = [
   {
-    period: "Nov 2022 - Present",
+    period: "Nov 2022 - Aug 2026",
     role: "Software Engineer II",
     company: "JPMorgan Chase & Co.",
     summary:
