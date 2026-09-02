@@ -1036,6 +1036,28 @@ h3 {
   padding-bottom: 68px;
 }
 
+.tech-support-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  margin-top: 18px;
+  padding: 28px 30px;
+  background:
+    radial-gradient(circle at top right, rgba(203, 122, 43, 0.14), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(246, 242, 233, 0.78));
+}
+
+.tech-support-panel h3 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1;
+}
+
+.tech-support-panel p:not(.eyebrow) {
+  max-width: 66ch;
+  color: var(--muted);
+}
+
 .contact-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -1092,6 +1114,7 @@ h3 {
   .game-showcase,
   .photography-section,
   .personal-note,
+  .tech-support-panel,
   .contact-panel {
     grid-template-columns: 1fr;
   }
@@ -1148,7 +1171,8 @@ h3 {
   .archive-panel,
   .contact-panel,
   .photography-copy,
-  .personal-note {
+  .personal-note,
+  .tech-support-panel {
     padding: 22px;
   }
 
